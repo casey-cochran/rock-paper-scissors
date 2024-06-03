@@ -15,8 +15,9 @@ const getHumanChoice = () => {
 
 const playRound = ( humanChoice, computerChoice ) => {
     const removeCasingChoice = humanChoice.toLowerCase();
-
-    if ( removeCasingChoice === 'rock' && computerChoice !== 'paper' ) {
+    if ( removeCasingChoice === computerChoice ) {
+        return 'Its a tie';
+    } else if ( removeCasingChoice === 'rock' && computerChoice !== 'paper' ) {
         humanScore++;
         return `You win, rock beats ${computerChoice}`;
     } else if ( removeCasingChoice === 'paper' && computerChoice !== 'scissors' ) {
@@ -39,8 +40,10 @@ const playGame = () => {
         alert(text);
         round++;
     }
-    if (round === 5) {
+    if (round === 5 && humanScore !== computerScore) {
         return humanScore > computerScore ? console.log('You win') : console.log('You Lose');
+    } else {
+        console.log('its a tie!')
     }
 }
 
