@@ -1,9 +1,8 @@
 
 const choices = ['rock', 'paper', 'scissors'];
 let humanScore = 0;
-    let computerScore = 0;
+let computerScore = 0;
 
-// randomly return string values of rock, paper, or scissors
  const getComputerChoice = () => {
     const randomNumber = Math.floor(Math.random() * 3);
     return choices[randomNumber]
@@ -19,27 +18,26 @@ const playRound = ( humanChoice, computerChoice ) => {
 
     if ( removeCasingChoice === 'rock' && computerChoice !== 'paper' ) {
         humanScore++;
-        return 'You win, rock beats paper';
+        return `You win, rock beats ${computerChoice}`;
     } else if ( removeCasingChoice === 'paper' && computerChoice !== 'scissors' ) {
         humanScore++;
-        return 'You win, paper beats rock';
+        return `You win, paper beats ${computerChoice}`;
     } else if ( removeCasingChoice === 'scissors' && computerChoice !== 'rock' ) {
         humanScore++;
-        return 'You win, scissors beats paper';
+        return `You win, scissors beats ${computerChoice}`;
     } else {
         computerScore++;
         return `You lose ${computerChoice} beats ${removeCasingChoice}`
     }
 }
 
-const playGame = (  ) => {
+const playGame = () => {
 
     let round = 0;
     for(let i = 0; i < 5; i++) {
        const text = playRound( getHumanChoice(), getComputerChoice() )
         alert(text);
         round++;
-        console.log(round, 'round')
     }
     if (round === 5) {
         return humanScore > computerScore ? console.log('You win') : console.log('You Lose');
