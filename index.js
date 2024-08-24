@@ -71,6 +71,7 @@ const buttons = document.querySelectorAll('button');
 
         if(roundWinnerObj.score === 5) {
             const winnerDiv = document.querySelector('.winner');
+            const resetBtn = document.querySelector('#reset-btn');
             winnerDiv.textContent = `${roundWinnerObj.player} wins!`;
         }
     })
@@ -78,21 +79,21 @@ const buttons = document.querySelectorAll('button');
 
 
 
-const playGame = () => {
+// const playGame = () => {
 
-    //remove logic that plays 5 rounods?
-    let round = 0;
-    for(let i = 0; i < 5; i++) {
-       const text = playRound( getHumanChoice(), getComputerChoice() )
-        alert(text);
-        round++;
-    }
+//     //remove logic that plays 5 rounods?
+//     let round = 0;
+//     for(let i = 0; i < 5; i++) {
+//        const text = playRound( getHumanChoice(), getComputerChoice() )
+//         alert(text);
+//         round++;
+//     }
 
-    if (round === 5 && humanScore !== computerScore) {
-        return humanScore > computerScore ? console.log('You win') : console.log('You Lose');
-    } else {
-        console.log('its a tie!')
-    }
-}
+//     if (round === 5 && humanScore !== computerScore) {
+//         return humanScore > computerScore ? console.log('You win') : console.log('You Lose');
+//     } else {
+//         console.log('its a tie!')
+//     }
+// }
 
 // playGame();
